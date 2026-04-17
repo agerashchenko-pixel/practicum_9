@@ -7,9 +7,12 @@ try:
     else:
         count = int(lines[0].strip())
         real_lines_count = len(lines) - 1
-        result = 'YES' if real_lines_count == count else 'NO'
+        if real_lines_count == count:
+            result = 'YES'
+        else:
+            result = 'NO'
 
-except (ValueError, IndexError, FileNotFoundError):
+except (ValueError):
     result = 'ERROR'
 
 with open('output', 'w', encoding='utf-8') as file:

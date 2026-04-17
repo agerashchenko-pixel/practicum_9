@@ -1,6 +1,8 @@
 try:
     with open('input', 'r', encoding='utf-8') as f:
-        nums = [line.strip() for line in f if line.strip()]
+        nums = []
+        for line in f:
+            nums.append(line.strip())
     if len(nums) < 3:
         result = 'data error'
     else:
@@ -13,7 +15,5 @@ except ValueError:
     result = 'data error'
 except ZeroDivisionError:
     result = 'division by 0'
-except FileNotFoundError:
-    result = 'data error'
 with open('output', 'w', encoding='utf-8') as f:
     f.write(result)

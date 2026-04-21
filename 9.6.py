@@ -12,9 +12,8 @@ try:
         else:
             result = 'NO'
 
-except (ValueError):
+except ValueError:
     result = 'ERROR'
 
 with open('output', 'w', encoding='utf-8') as file:
     file.write(result)
-

@@ -3,6 +3,7 @@ try:
         nums = []
         for line in f:
             nums.append(line.strip())
+
     if len(nums) < 3:
         result = 'data error'
     else:
@@ -15,5 +16,6 @@ except ValueError:
     result = 'data error'
 except ZeroDivisionError:
     result = 'division by 0'
+
 with open('output', 'w', encoding='utf-8') as f:
     f.write(result)
